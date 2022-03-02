@@ -7,7 +7,7 @@ import numpy as np
 from sys import argv
 from time import sleep
 
-ip = "192.168.60.194"
+ip = ""
 porta = 23
 login = "GEPON"
 senha = "GEPON"
