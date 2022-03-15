@@ -6,9 +6,9 @@ from time import sleep
 import datetime
 
 
-senhas = ['W3bbyP4ss','gb08-ppt','gb08-ibr','gb08-prj','gb08-rbs','gb08-tim','gb08-tbr','globalisp','gb08-srt','gb08-cnp','gb08-spt','gb08-ips']
+senhas = ['senha1','senha2_opcional','senha3_opcional']
 lines = []
-with open('banco_de_ips_bloco.txt') as f:
+with open('banco_de_ips.txt') as f:
     lines = f.readlines()
 
 count = 0
@@ -29,9 +29,9 @@ for line in lines:
         count2 += 1
         print(senha)
         try:
-            ssh.connect(hostname=ip, port=22345, username='admin', password=senha, timeout=5)
+            ssh.connect(hostname=ip, port=22, username='admin', password=senha, timeout=5)
             sleep(5)
-            print("{} Acessivel na porta 22345", ip)
+            print("{} Acessivel na porta 22", ip)
             conexao = True
 
 
@@ -39,7 +39,7 @@ for line in lines:
             error = IOError
             conexao = False
             print(error)
-            #print("Tentativa de conectar na porta padrão 22\n")
+            #print("Tentativa de conectar na porta padrão 22 sem sucesso\n")
 
         if(conexao==True):
             break
